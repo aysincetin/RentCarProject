@@ -17,7 +17,7 @@ namespace DataAccess.Concrete.InMemory
                 new Car{Id=1,BrandId=1,ColorId=1,ModelYear=2000,DailyPrice=60.000,Description="Opel Car"},
                 new Car{Id=2,BrandId=2,ColorId=2,ModelYear=2005,DailyPrice=100.000,Description="BMW Car"},
                 new Car{Id=3,BrandId=2,ColorId=1,ModelYear=2010,DailyPrice=350.000,Description="BMW Car"},
-                new Car{Id=4,BrandId=3,ColorId=1,ModelYear=20020,DailyPrice=500.000,Description="Chevrolet Car"},
+                new Car{Id=4,BrandId=3,ColorId=1,ModelYear=2020,DailyPrice=500.000,Description="Chevrolet Car"},
                 new Car{Id=5,BrandId=3,ColorId=2,ModelYear=2021,DailyPrice=800.000,Description="Chevrolet Car"}
             };
         }
@@ -49,9 +49,9 @@ namespace DataAccess.Concrete.InMemory
             return _cars;
         }
 
-        public List<Car> GetById()
+        public List<Car> GetById(int BrandId)
         {
-            return null;
+            return _cars.Where(c=>c.BrandId==BrandId).ToList();
         }
 
         
